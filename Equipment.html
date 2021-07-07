@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Equipment</title>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/scriptForEquipment.js"></script>
+
+</head>
+<body>
+
+<header>
+  <!--navigation-->
+  <nav>
+    <!--logo-->
+    <a class="logo">
+      <img src="img/lab-org.png">
+    </a>
+    <!--menu-button-->
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn">
+      <span class="nav-icon"></span>
+    </label>
+    <!--menu-->
+    <ul class="menu">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Labs.html">Labs</a></li>
+      <li><a href="Chemicals.html">Chemicals</a></li>
+      <li><a href="Equipment.html">Equipment</a></li>
+    </ul>
+  </nav>
+
+  <!--banner-->
+  <div class="banner">
+    <div class="banner-container">
+      <h><span>EQUIPMENT</span></h>
+    </div>
+  </div>
+</header>
+
+<!--body-->
+<div class="wrapper">
+
+  <!--main text section-->
+  <section class="main">
+
+    <!--get all chemicals, filter by id-->
+    <section>
+
+      <h2>Equipment filtering</h2>
+      <p>Press the button bellow to get all equipment pieces.</p>
+      <div>
+        <button type="button" id="allEquipmentButton">Get all equipment</button>
+      </div>
+
+      <p>If you want to get a specific equipment piece, type bellow
+        the ID and press "Submit" button.</p>
+      <div>
+        <label for="idText"></label><br/>
+        <input type="text" id="idText" required placeholder="Enter the id">
+      </div>
+      <div>
+        <button type="button" id="idButton">Submit</button>
+      </div>
+
+    </section>
+
+    <!--update a piece of equipment-->
+    <section>
+      <h2>Update an equipment piece</h2>
+      <p>Be sure to choose the equipment piece in ID filtering <b>and</b> type in the ID again! This way you make sure that
+        you want to update this exact piece.</p>
+      <p>Fill in the form and press the "Put" button.</p>
+
+      <form id="put-equipment">
+        <div>
+          <label for="equipmentID"></label>
+          <input type="text" id="equipmentID" name="id" required placeholder="Enter the ID">
+        </div>
+        <div>
+          <label for="equipmentName-put"></label>
+          <input type="text" id="equipmentName-put" name="equipmentName" required placeholder="Enter the name">
+        </div>
+
+        <div>
+          <label for="equipmentQuantity-put"></label>
+          <input type="text" id="equipmentQuantity-put" name="equipmentQuantity" required placeholder="Enter the quantity">
+        </div>
+
+        <div>
+          <button type="submit" id="putButton">Put</button>
+        </div>
+      </form>
+    </section>
+
+    <!--delete a piece of equipment-->
+    <section>
+
+      <h2>Delete an equipment piece</h2>
+      <p>Be sure to choose the equipment piece in <b>ID filtering</b>!</p>
+      <p>To delete a selected equipment, simply press the button down bellow. Easy!</p>
+
+      <div>
+        <button type="submit" id="deleteEquipmentButton">Delete</button>
+      </div>
+
+    </section>
+
+  </section>
+
+  <!--tables section-->
+  <section class="sidebar">
+
+    <h2>Equipment</h2>
+
+    <table id="equipment-table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody id="equipment-container">
+      </tbody>
+    </table>
+
+  </section>
+
+</div>
+
+<!--simple footer with the dynamic date-->
+<footer>
+  <p><script>document.write(new Date().getFullYear())</script>, Elena Stroiu</p>
+</footer>
+
+</body>
+
+</html>

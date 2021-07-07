@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab</title>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/scriptForLabs.js"></script>
+
+</head>
+<body>
+
+<header>
+  <!--navigation-->
+  <nav>
+    <!--logo-->
+    <a class="logo">
+      <img src="img/lab-org.png">
+    </a>
+    <!--menu-button-->
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn">
+      <span class="nav-icon"></span>
+    </label>
+    <!--menu-->
+    <ul class="menu">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Labs.html">Labs</a></li>
+      <li><a href="Chemicals.html">Chemicals</a></li>
+      <li><a href="Equipment.html">Equipment</a></li>
+    </ul>
+  </nav>
+
+  <!--banner-->
+  <div class="banner">
+    <div class="banner-container">
+      <h><span>LABS</span></h>
+    </div>
+  </div>
+</header>
+
+<!--body-->
+<div class="wrapper">
+
+  <!--main text section-->
+  <section class="main">
+
+    <!--get all labs, filter lab by location or id-->
+    <section>
+      <h2>Lab filtering</h2>
+      <p>Press the button bellow to get all labs.</p>
+      <div>
+        <button type="button" id="allLabsButton">Get all labs</button>
+      </div>
+
+      <p>If you want to get a specific lab and its chemicals and equipment, type bellow
+        the ID and press "Submit" button.</p>
+      <div>
+        <label for="idText"></label><br/>
+        <input type="text" id="idText" required placeholder="Enter the id">
+      </div>
+      <div>
+        <button type="button" id="idButton">Submit</button>
+      </div>
+
+      <p>Bellow you can get the labs by their location. The procedure is almost identical to the
+        ID filtering, simply type in the location and click "Submit".</p>
+      <div>
+        <label for="locationText"></label><br/>
+        <input type="text" id="locationText" required placeholder="Enter the location">
+      </div>
+      <div>
+        <button type="button" id="locationButton">Submit</button>
+      </div>
+
+    </section>
+
+    <!--post new lab-->
+    <section>
+      <h2>Post a new lab</h2>
+      <p>If you want to introduce a new lab, fill in the form bellow and press "Post button". The ID will be generated
+        automatically. The created lab will have empty lists of chemicals and equipment, so be
+        sure to add some too!</p>
+      <form id="post-lab">
+
+        <div>
+          <label for="labName"></label>
+          <input type="text" id="labName" name="labName" required placeholder="Enter name">
+        </div>
+
+        <div>
+          <label for="labLocation"></label>
+          <input type="text" id="labLocation" name="labLocation" required placeholder="Enter location">
+        </div>
+
+        <div>
+          <button type="submit" id="postButton">Post</button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <!--add chemical to the lab-->
+    <section>
+      <h2>Add a chemical to the lab</h2>
+      <p>Be sure to choose the lab in <b>ID filtering</b>!</p>
+      <p>Fill in the form. Again, ID will be generated automatically then press the "Post" button.</p>
+
+      <form id="post-lab-chem">
+
+        <div>
+          <label for="chemicalName"></label>
+          <input type="text" id="chemicalName" name="chemicalName" required placeholder="Enter name">
+        </div>
+
+        <div>
+          <label for="chemicalFormula"></label>
+          <input type="text" id="chemicalFormula" name="chemicalFormula" required placeholder="Enter formula">
+        </div>
+
+        <div>
+          <label for="chemicalType"></label>
+          <input type="text" id="chemicalType" name="chemicalType" required placeholder="Enter type">
+        </div>
+
+        <div>
+          <label for="chemicalQuantity"></label>
+          <input type="text" id="chemicalQuantity" name="chemicalQuantity" required placeholder="Enter quantity">
+        </div>
+
+        <div>
+          <button type="submit" id="postChemButton">Post</button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <!--add equipment piece to the lab-->
+    <section>
+
+      <h2>Add a piece of equipment to the lab</h2>
+      <p>Be sure to choose the lab in <b>ID filtering</b>!</p>
+      <p>Same as for the chemical - fill the form, press the "Post" button.</p>
+
+      <form id="post-lab-equip">
+
+        <div>
+          <label for="equipmentName"></label>
+          <input type="text" id="equipmentName" name="equipmentName" required placeholder="Enter name">
+        </div>
+
+
+        <div>
+          <label for="equipmentQuantity"></label>
+          <input type="text" id="equipmentQuantity" name="equipmentQuantity" required placeholder="Enter quantity">
+        </div>
+
+        <div>
+          <button type="submit" id="postEquipButton">Post</button>
+        </div>
+
+      </form>
+
+    </section>
+
+
+    <!--update existing lab-->
+    <section>
+
+      <h2>Update lab</h2>
+      <p>Be sure to choose the lab in ID filtering <b>and</b> type in the ID again! This way you make sure that
+        you want to update this exact lab.</p>
+      <p>Fill in the form, don't worry, the chemicals and equipment lists will not be emptied! Be sure to
+        press the "Put" button.</p>
+
+      <form id="put-lab">
+        <div>
+          <label for="labID"></label>
+          <input type="text" id="labID" name="id" required placeholder="Enter ID">
+        </div>
+        <div>
+          <label for="labName-put"></label>
+          <input type="text" id="labName-put" name="labName" required placeholder="Enter name">
+        </div>
+
+        <div>
+          <label for="labLocation-put"></label>
+          <input type="text" id="labLocation-put" name="labLocation" required placeholder="Enter location">
+        </div>
+
+        <div>
+          <button type="submit" id="putButton">Put</button>
+        </div>
+      </form>
+
+    </section>
+
+    <!--delete one lab-->
+    <section>
+
+      <h2>Delete a lab</h2>
+      <p>Be sure to choose the lab in <b>ID filtering</b>!</p>
+      <p>To delete a selected lab, simply press the button down bellow. Easy!</p>
+
+      <div>
+        <button type="submit" id="deleteButton">Delete</button>
+      </div>
+
+    </section>
+
+  </section>
+
+  <!--tables section-->
+  <section class="sidebar">
+
+    <!--all labs-->
+    <h2>Labs</h2>
+
+    <table id="lab-table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Location</th>
+      </tr>
+      </thead>
+      <tbody id="labs-container">
+      </tbody>
+    </table>
+
+    <!--if a lab filter by id, then its chemicals are displayed-->
+    <h2>Chemicals</h2>
+
+    <table id="chem-table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Formula</th>
+        <th>Type</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody id="chem-container">
+      </tbody>
+    </table>
+
+    <!--if a lab filter by id, then its equipment are displayed-->
+    <h2>Equipment</h2>
+
+    <table id="equipment-table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody id="equipment-container">
+      </tbody>
+    </table>
+
+
+  </section>
+
+</div>
+
+<!--simple footer with the dynamic date-->
+<footer>
+  <p><script>document.write(new Date().getFullYear())</script>, Elena Stroiu</p>
+</footer>
+
+</body>
+
+</html>

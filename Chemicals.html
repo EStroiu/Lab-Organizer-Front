@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chemicals</title>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/scriptForChem.js"></script>
+
+</head>
+<body>
+
+<header>
+  <!--navigation-->
+  <nav>
+    <!--logo-->
+    <a class="logo">
+      <img src="img/lab-org.png">
+    </a>
+    <!--menu-button-->
+    <input class="menu-btn" type="checkbox" id="menu-btn"/>
+    <label class="menu-icon" for="menu-btn">
+      <span class="nav-icon"></span>
+    </label>
+    <!--menu-->
+    <ul class="menu">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="Labs.html">Labs</a></li>
+      <li><a href="Chemicals.html">Chemicals</a></li>
+      <li><a href="Equipment.html">Equipment</a></li>
+    </ul>
+  </nav>
+
+  <!--banner-->
+  <div class="banner">
+    <div class="banner-container">
+      <h><span>CHEMICALS</span></h>
+    </div>
+  </div>
+</header>
+
+<!--body-->
+<div class="wrapper">
+
+  <!--main text section-->
+  <section class="main">
+
+    <!--get all chemicals, filter by type or id-->
+    <section>
+
+      <h2>Chemical filtering</h2>
+      <p>Press the button bellow to get all chemicals.</p>
+      <div>
+        <button type="button" id="allChemButton">Get all chemicals</button>
+      </div>
+
+      <p>If you want to get a specific chemical, type bellow
+        the ID and press "Submit" button.</p>
+      <div>
+        <label for="idText"></label><br/>
+        <input type="text" id="idText" required placeholder="Enter the id">
+      </div>
+      <div>
+        <button type="button" id="idButton">Submit</button>
+      </div>
+
+      <p>Bellow you can get the chemicals by their type. Type in "organic" or
+        "inorganic" and click "Submit".</p>
+      <div>
+        <label for="typeText"></label><br/>
+        <input type="text" id="typeText" required placeholder="Enter the type">
+      </div>
+      <div>
+        <button type="button" id="typeButton">Submit</button>
+      </div>
+
+    </section>
+
+    <!--update a chemical-->
+    <section>
+      <h2>Update a chemical</h2>
+      <p>Be sure to choose the chemical compound in ID filtering <b>and</b> type in the ID again! This way you make sure that
+        you want to update this exact compound.</p>
+      <p>Fill in the form and press the "Put" button.</p>
+
+      <form id="put-chem">
+        <div>
+          <label for="chemID"></label>
+          <input type="text" id="chemID" name="id" required placeholder="Enter the ID">
+        </div>
+        <div>
+          <label for="chemName-put"></label>
+          <input type="text" id="chemName-put" name="chemicalName" required placeholder="Enter the name">
+        </div>
+
+        <div>
+          <label for="chemFormula-put"></label>
+          <input type="text" id="chemFormula-put" name="chemicalFormula" required placeholder="Enter the formula">
+        </div>
+
+        <div>
+          <label for="chemType-put"></label>
+          <input type="text" id="chemType-put" name="chemicalType" required placeholder="Enter the type">
+        </div>
+
+        <div>
+          <label for="chemQuantity-put"></label>
+          <input type="text" id="chemQuantity-put" name="chemicalQuantity" required placeholder="Enter the quantity">
+        </div>
+
+        <div>
+          <button type="submit" id="putButton">Put</button>
+        </div>
+      </form>
+    </section>
+
+    <!--delete a chemical-->
+    <section>
+
+      <h2>Delete a chemical</h2>
+      <p>Be sure to choose the chemical compound in <b>ID filtering</b>!</p>
+      <p>To delete a selected chemical, simply press the button down bellow. Easy!</p>
+
+      <div>
+        <button type="submit" id="deleteChemicalButton">Delete</button>
+      </div>
+
+    </section>
+
+  </section>
+
+  <!--tables section-->
+  <section class="sidebar">
+
+    <h2>Chemicals</h2>
+
+    <table id="chem-table">
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Formula</th>
+        <th>Type</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody id="chem-container">
+      </tbody>
+    </table>
+
+  </section>
+
+</div>
+
+<!--simple footer with the dynamic date-->
+<footer>
+  <p><script>document.write(new Date().getFullYear())</script>, Elena Stroiu</p>
+</footer>
+
+</body>
+
+</html>
